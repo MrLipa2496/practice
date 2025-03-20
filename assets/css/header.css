@@ -1,0 +1,67 @@
+/* Header */
+.menuLink.activeLink {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.container {
+  max-width: 1130px;
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  max-width: 225px;
+  width: 100%;
+}
+
+.menuContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.menuLink {
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--main-color);
+  margin-right: 10px;
+  padding: 10px 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  position: relative;
+  max-width: 350px;
+  margin-left: auto;
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  margin-bottom: 20px;
+  max-width: 350px;
+  width: 100%;
+  padding-top: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--main-color);
+}
+
+.btnLup {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+}
