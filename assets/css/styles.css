@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Roboto Slab', serif;
+  color: var(--main-color);
 }
 
 /* Header */
@@ -330,4 +331,131 @@ body {
 .seed {
   font-size: 18px;
   line-height: 1.5;
+}
+
+/* Products */
+
+.main {
+  background-color: #fcf0f0;
+}
+
+.productsContainer {
+  max-height: 60vh;
+}
+
+.secTitleProduct {
+  margin: 50px 0;
+}
+
+.dicorateEl {
+  color: var(--green-color);
+  margin-bottom: 50px;
+}
+
+.productsWrapper {
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.paragraf,
+.paragrafLeftBorder {
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.boldText {
+  font-weight: 700;
+}
+
+.paragrafLeftBorder {
+  border-left: 4px solid #eb5757;
+  padding: 5px;
+  padding-left: 30px;
+}
+
+.tomatInfoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: white;
+  margin-top: 40px;
+}
+
+.tomatInfoItem {
+  max-width: 350px;
+  padding: 20px;
+}
+
+.tomatInfoTitle {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.4;
+  border-bottom: 1px solid var(--main-color);
+  padding-bottom: 10px;
+}
+
+.tomatInfo {
+  padding-top: 10px;
+  line-height: 1.3;
+}
+
+.boldParagraf {
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  max-width: 350px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.cardImg {
+  width: 100%;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.cardLink,
+.cardImgLink {
+  text-decoration: none;
+}
+
+.cardInfo {
+  background-color: white;
+  padding: 10px;
+}
+
+.cardLink {
+  color: var(--green-color);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cardParagraf {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--green-color);
+}
+
+@media screen and (max-width: 1200px) {
+  .cardsWrapper,
+  .tomatInfoContainer {
+    justify-content: center;
+  }
 }
