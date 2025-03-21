@@ -1,4 +1,4 @@
-const basePath = window.location.pathname.includes('/practice/')
+const basePath = window.location.hostname.includes('github.io')
   ? '/practice/'
   : '/'
 
@@ -18,10 +18,19 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(error => console.error('Error loading footer:', error))
 
   document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+    if (link.href.includes('https://') || link.href.includes('http://')) {
+      return
+    }
     link.href = basePath + link.getAttribute('href')
   })
 
   document.querySelectorAll('script').forEach(script => {
+    if (
+      script.src &&
+      (script.src.includes('https://') || script.src.includes('http://'))
+    ) {
+      return
+    }
     if (script.src) {
       script.src = basePath + script.getAttribute('src')
     }
