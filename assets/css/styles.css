@@ -2,6 +2,7 @@
   --main-color: #324950;
   --brown-color: #735440;
   --green-color: #57984c;
+  --red-color: #cf2333;
 }
 
 body {
@@ -558,5 +559,212 @@ body {
   }
   .cpSubtitle {
     font-size: 12px;
+  }
+}
+
+/* Tomato one */
+.toMain {
+  background-color: #f7f7f7;
+  position: relative;
+  background-image: url('../../assets/images/to-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.toWrapper {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.toLinkBack {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--green-color);
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.toLinkBack i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.toLinkBack:hover {
+  color: #b71c1c;
+}
+
+.toLinkBack:hover i {
+  transform: translateX(-5px);
+}
+
+.toCardInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .toCardInfo {
+    justify-content: center;
+  }
+}
+
+.toSubtitle {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--green-color);
+}
+
+.toDicorateEl {
+  margin-top: 50px;
+}
+
+.toIconContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+  line-height: 1.4;
+}
+
+.toIcon {
+  width: 80px;
+  height: 80px;
+}
+
+.toIconDescrip {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--red-color);
+}
+
+.toTomatoImg {
+  max-width: 340px;
+  min-height: 300px;
+  object-fit: contain;
+}
+
+.characteristics {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.toTitle {
+  color: var(--green-color);
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--green-color);
+  max-width: 150px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.toResistance {
+  margin-top: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.toDesc {
+  line-height: 1.4;
+}
+
+.toGreenTitle {
+  color: var(--green-color);
+  border-bottom: 1px solid var(--green-color);
+  max-width: 150px;
+  padding-bottom: 20px;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.toSecondColumn {
+  margin-left: 200px;
+}
+
+.toUl {
+  list-style-type: disc;
+  padding-left: 15px;
+  margin: 10px 0;
+}
+
+.toLi {
+  margin: 20px 0;
+}
+
+.cycle {
+  width: 150px;
+}
+
+.toPdf i {
+  margin-right: 10px;
+}
+
+.toPdf {
+  position: absolute;
+  right: 10px;
+  top: -30px;
+  padding: 15px;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid var(--green-color);
+  color: var(--green-color);
+  text-decoration: none;
+  transition: 0.3s 0.1s linear;
+}
+
+.toPdf:hover {
+  background-color: var(--green-color);
+  color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .toSecondColumn {
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .characteristics {
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    padding: 10px;
+  }
+
+  .toSecondColumn {
+    margin-left: 0;
+  }
+
+  .toTitle,
+  .toGreenTitle {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .cycle {
+    width: 150px;
+  }
+
+  .toUl {
+    padding-left: 10px;
+    margin: 5px 0;
+  }
+
+  .toLi {
+    margin: 5px 0;
   }
 }
