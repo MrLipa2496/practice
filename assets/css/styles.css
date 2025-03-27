@@ -768,3 +768,155 @@ body {
     margin: 5px 0;
   }
 }
+
+/* Contact us */
+.cuMain {
+  background-color: #f7f7f7;
+}
+
+.cuForm {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+
+.cuFormColumnFirst,
+.cuFormColumnSecond {
+  padding: 10px;
+  min-width: 300px;
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.cuFormColumnFirst {
+  max-width: 350px;
+}
+
+.cuFormColumnSecond {
+  max-width: 650px;
+}
+
+.cuFormLabel {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 8px 0;
+  color: var(--main-color);
+}
+
+.cuLabelContent {
+  padding: 10px 0;
+}
+
+.cuFormInput,
+.cuFormTextarea,
+.cuFormSelect {
+  border: 2px solid #dadada;
+  border-radius: 10px;
+  width: 100%;
+  padding: 19px;
+  box-sizing: border-box;
+}
+
+.cuFormInput,
+.cuFormTextarea {
+  min-width: 300px;
+}
+
+.cuFormTextarea {
+  min-height: 390px;
+  font-size: 16px;
+  resize: none;
+}
+
+.cuFormSelect {
+  padding-right: 40px;
+  appearance: none;
+}
+
+.selectBtn {
+  position: absolute;
+  top: 65%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.cuCodeWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.cuCode {
+  max-width: 100px;
+  max-height: 27px;
+  flex-shrink: 1;
+  width: auto;
+}
+
+.cuFormBtn {
+  max-width: 255px;
+  width: 100%;
+  padding: 19px;
+  font-family: 'Roboto Slab', serif;
+  background-color: var(--green-color);
+  color: white;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.cuContactInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 40px 20px;
+}
+
+.cuContactParagraf {
+  margin-top: 20px;
+}
+
+.cuTel {
+  text-decoration: none;
+  color: var(--green-color);
+}
+
+@media (max-width: 1054px) {
+  .cuFormColumnSecond,
+  .cuFormColumnFirst {
+    max-width: 45%;
+  }
+
+  .cuCodeWrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cuFormInput,
+  .cuFormBtn {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cuFormColumnFirst,
+  .cuFormColumnSecond {
+    max-width: 100%;
+  }
+
+  .cuFormLabel {
+    padding: 10px 0;
+  }
+}
