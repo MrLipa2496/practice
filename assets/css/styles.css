@@ -716,14 +716,14 @@ body {
 }
 
 .toIcon {
-  width: 80px;
+  width: 90px;
   height: 80px;
 }
 
 .toIconDescrip {
   font-size: 24px;
   font-weight: 700;
-  color: var(--red-color);
+  color: var(--perple-color);
 }
 
 .toTomatoImg {
