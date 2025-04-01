@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="assets/js/main.js" defer></script>
   </head>
   <body>
@@ -24,21 +25,19 @@
         <div class="imgContainer">
           <img
             class="bgImg"
-            src="assets/images/products-tomato.png"
+            src="assets/images/products-grape.jpg"
             alt="home-bg"
           />
         </div>
       </div>
 
       <div class="productsWrapper">
-        <h2 class="secTitle secTitleProduct">
-          Agridera Fresh Market Tomato Hybrids
-        </h2>
+        <h2 class="secTitle secTitleProduct">Agridera Fresh Market Grapes</h2>
         <p class="dicorateEl">*****</p>
 
         <p class="paragraf">
           Agridera aims to be one of the world's leading companies in the
-          breeding, production, and marketing of tomato seeds.
+          breeding, production, and marketing of grape seeds.
           <span class="boldText">
             We invest intensively in research and development to provide
             solutions to growers and consumers in numerous countries around the
@@ -48,62 +47,61 @@
           to different markets globally.
         </p>
         <p class="paragraf">
-          Currently, emphasis is placed on combining Tomato Yellow Leaf Curl
-          Virus (TYLCV) and Tomato Spotted Wilt Virus (TSWV) resistances with
-          other soil borne diseases into superior tomato breeding lines and
-          hybrids. Moreover, comprehensive efforts are being undertaken to
-          develop varieties resistance to TBRFV virus (Tomato Brown Rugose Fruit
-          Virus).
+          Currently, emphasis is placed on combining Grape Leaf Curl Virus
+          (GLCV) and Grape Spotted Wilt Virus (GSWV) resistances with other soil
+          borne diseases into superior grape breeding lines and hybrids.
+          Moreover, comprehensive efforts are being undertaken to develop
+          varieties resistance to GBRFV virus (Grape Brown Rugose Fruit Virus).
         </p>
         <p class="paragraf">
           In terms of horticultural traits, breeding is for earliness, different
-          fruit sizes, firmness, red fruit color, flavor, crack resistance,
+          fruit sizes, firmness, purple fruit color, flavor, crack resistance,
           shelf life, and high/low temperature fruit set. Combinations of
           quality features and disease resistance are sought in a variety of
           types, namely round and elongated shapes.
         </p>
         <p class="paragrafLeftBorder">
-          Agirdera Tomato breeding programs are focusing on three main segments:
-          Greenhouse Indeterminate Tomatoes, Open-field Indeterminate Tomatoes,
-          and Bush Type Open-field Tomatoes.
+          Agirdera Grape breeding programs are focusing on three main segments:
+          Greenhouse Indeterminate Grapes, Open-field Indeterminate Grapes, and
+          Bush Type Open-field Grapes.
         </p>
 
         <div class="tomatInfoContainer">
           <div class="tomatInfoItem">
-            <h3 class="tomatInfoTitle">Greenhouse Tomato Breeding Program</h3>
+            <h3 class="tomatInfoTitle">Greenhouse Grape Breeding Program</h3>
             <p class="tomatInfo">
               <span class="boldText"
                 >This breeding is aimed for the Spanish and Turkish markets.
               </span>
               For single and cluster picks, round fruit shape and resistances of
-              TYLCV, TSWV, Nematodes and FORL (Fusarium oxysporum f.sp.
+              GLCV, GSWV, Nematodes and FORL (Fusarium oxysporum f.sp.
               radicis-lycopersici). Some hybrids may include more resistances,
               such as Cladosporium and Leveillula Taurica (Lv).
             </p>
           </div>
 
           <div class="tomatInfoItem">
-            <h3 class="tomatInfoTitle">Open-field Indeterminate Tomatoes</h3>
+            <h3 class="tomatInfoTitle">Open-field Indeterminate Grapes</h3>
             <p class="tomatInfo">
               <span class="boldText"
                 >This breeding is for Brazilian, Moroccan, and Turkish markets.
               </span>
               The main focus is on large round shape fruits (200 grams plus);
-              and resistances of TYLCV, TSWV, Nematodes and FORL. In the near
+              and resistances of GLCV, GSWV, Nematodes and FORL. In the near
               future, F3 (Fusarium oxysporum f.sp. lycopersici) will be included
               as basic resistance in our cultivars.
             </p>
           </div>
 
           <div class="tomatInfoItem">
-            <h3 class="tomatInfoTitle">Open-field Bush Type Tomatoes</h3>
+            <h3 class="tomatInfoTitle">Open-field Bush Type Green Grapes</h3>
             <p class="tomatInfo">
               <span class="boldText"
                 >This breeding is for Mediterranean markets.
               </span>
               We breed round and elongated shapes, standard sizes (140- 180
               grams), and beef sizes (min. 180 grams up to 300 grams and more).
-              We combine the resistances of TYLCV, TSWV and Nematodes as basic
+              We combine the resistances of GLCV, GSWV and Nematodes as basic
               resistances in our hybrids. However, some hybrids may include more
               resistances, such as Cladosporium and Leveillula Taurica (Lv).
             </p>
@@ -115,132 +113,24 @@
           the world.
         </p>
 
-        <div class="cardsWrapper">
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
+        <div class="cardsWrapper" id="app">
+          <div class="card" v-for="product in products" :key="product.id">
+            <a
+              class="cardImgLink"
+              :href="'product.html'"
+              @click="addItem(product.id)"
+            >
+              <img class="cardImg" :src="product.image" :alt="product.title" />
             </a>
             <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1000 (TAG 853)</h3>
+              <a
+                class="cardLink"
+                :href="'product.html'"
+                @click="addItem(product.id)"
+              >
+                <h3>{{ product.title }}</h3>
               </a>
-              <p class="cardParagraf">Tomato Determinate Red Standard Round</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
-            </a>
-            <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1001 (TAG 855)</h3>
-              </a>
-              <p class="cardParagraf">Tomato Determinate Red Standard Round</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
-            </a>
-            <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1002 (TAG 809)</h3>
-              </a>
-              <p class="cardParagraf">Tomato Determinate Red Standard Round</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
-            </a>
-            <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1003 (TAG 834 )</h3>
-              </a>
-              <p class="cardParagraf">Tomato Determinate Red Standard Round</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
-            </a>
-            <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1004 (TAG 848)</h3>
-              </a>
-              <p class="cardParagraf">Tomato Determinate Red BEEF Round</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
-            </a>
-            <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1005 (TAG 800)</h3>
-              </a>
-              <p class="cardParagraf">Tomato Determinate Red Standard Round</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
-            </a>
-            <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1006 (TAG 898)</h3>
-              </a>
-              <p class="cardParagraf">Tomato Determinate Red Elongated</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <a class="cardImgLink" href="/practice/tomato-one.html">
-              <img
-                class="cardImg"
-                src="assets/images/card-tomato-one.png"
-                alt=""
-              />
-            </a>
-            <div class="cardInfo">
-              <a class="cardLink" href="/practice/tomato-one.html">
-                <h3>TAG 1007 (TAG 816)</h3>
-              </a>
-              <p class="cardParagraf">Tomato Determinate Red Elongated</p>
+              <p class="cardParagraf">{{ product.short_text }}</p>
             </div>
           </div>
         </div>
