@@ -106,8 +106,8 @@
               <p class="toLi">{{ product.characteristics.color }}</p>
             </div>
 
-            <a class="toPdf" href="#">
-              <i class="fa-solid fa-file-pdf"></i> Download pdf
+            <a class="toPdf" href="#" @click.prevent="addToCartAndGo">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
             </a>
           </div>
         </div>
