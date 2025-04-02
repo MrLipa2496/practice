@@ -132,17 +132,89 @@ var app = new Vue({
         }
       }
     ],
-    product: null
+    product: null,
+    cart: [],
+    contactFields: {
+      name: '',
+      companyName: '',
+      position: '',
+      city: '',
+      country: '',
+      phone: '',
+      email: '',
+      youAre: 'seedProducer',
+      other: '',
+      interest: '',
+      captcha: ''
+    },
+    orderSummary: null,
+    orderProducts: []
   },
   mounted: function () {
     const prodId = window.localStorage.getItem('prod')
     if (prodId) {
       this.product = this.products.find(p => p.id == prodId)
     }
+    this.getCart()
   },
   methods: {
     addItem: function (id) {
       window.localStorage.setItem('prod', id)
+    },
+
+    addToCartAndGo () {
+      let cart = JSON.parse(localStorage.getItem('cart')) || []
+      if (!cart.includes(this.product.id)) {
+        cart.push(this.product.id)
+        localStorage.setItem('cart', JSON.stringify(cart))
+      }
+      window.location.href = 'contact-us.html'
+    },
+
+    getCart () {
+      let cartIds = JSON.parse(localStorage.getItem('cart')) || []
+      this.cart = this.products.filter(p => cartIds.includes(p.id))
+    },
+
+    removeFromCart (id) {
+      let cartIds = JSON.parse(localStorage.getItem('cart')) || []
+      cartIds = cartIds.filter(pId => pId !== id)
+      localStorage.setItem('cart', JSON.stringify(cartIds))
+      this.getCart()
+    },
+
+    makeOrder () {
+      this.contactFields = {
+        name: this.$refs.name.value,
+        companyName: this.$refs.companyName.value,
+        position: this.$refs.position.value,
+        city: this.$refs.city.value,
+        country: this.$refs.country.value,
+        phone: this.$refs.phone.value,
+        email: this.$refs.email.value,
+        youAre: this.$refs.youAre.value,
+        other: this.$refs.other.value,
+        interest: this.$refs.interest.value,
+        captcha: this.$refs.captcha.value
+      }
+
+      if (!this.contactFields.name || !this.contactFields.email) {
+        alert('Please fill in the required fields: Name and Email.')
+        return
+      }
+      if (this.cart.length === 0) {
+        alert('Your cart is empty. Please add items before placing an order.')
+        return
+      }
+
+      this.orderProducts = [...this.cart]
+
+      this.cart = []
+      localStorage.removeItem('cart')
+
+      this.orderSummary = { ...this.contactFields }
+
+      this.$refs.contactForm.reset()
     }
   }
 })
