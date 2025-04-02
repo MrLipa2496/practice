@@ -190,7 +190,7 @@ var app = new Vue({
         cart.push(this.product.id)
         localStorage.setItem('cart', JSON.stringify(cart))
       }
-      window.location.href = 'contact-us.html'
+      window.location.href = '/practice/contact-us.html'
     },
 
     getCart () {
